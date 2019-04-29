@@ -1,0 +1,33 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+
+    <h2>Team Members</h2>
+    <p>Kontaktdaten:</p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Projektname</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Stadt</th>
+            <th>E-Mail</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for teammember in teammembers %}
+            <tr>
+                <td>{{ teammember.project_name }}</td>
+                <td>{{ teammember['vorname'] }}</td>
+                <td>{{ teammember['name'] }}</td>
+                <td>{{ teammember['stadt'] }}</td>
+                <td>{{ teammember['email'] }}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
